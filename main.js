@@ -1,34 +1,67 @@
-//map
-const numbers = [1, 2, 3, 4, 5];
-const numberMult = 6;
+const person = {
+  firstName: 'Victor',
+  lastName: 'Sardim',
+  age: 36,
+  hobbies: ['f1', 'nfl', 'futebol', 'games'],
+};
 
-const numbersMultipliedByNumber = numbers.map(function (number) {
-  return number * numberMult;
-});
+//acessando valores das propriedades do objeto
+//const firstName = person.firstName;
+//const lastName = person.lastName;
+//console.log(firstName + ' ' + lastName + ' ' + person.age);
 
-console.log(numbersMultipliedByNumber);
+//console.log(person.hobbies[3]);
 
-//filter
-//apenas numeros pares
-const estoque = [8, 7, 3, 8, 2, 1, 3, 5, 4, 9];
+//Destructuring
 
-const evenEstoque = estoque.filter(function (qtd) {
-  //se dividir por 2 e retornar zero, é numero par
-  return qtd % 2 === 0;
-});
+//const { firstName: primeiroNome, lastName, age, hobbies } = person;
 
-console.log(evenEstoque);
+// console.log(primeiroNome);
+// console.log(lastName);
+// console.log(age);
+// console.log(hobbies);
 
-//reduce
-//agrupar todos os elementos dentro de um unico elemento
-//neste caso, vamos somar todos os valores
+//inserindo novas propriedades dentro de um objeto
+person.pet = 'Bruce';
+console.log(person);
 
-const sumOfEstoque = estoque.reduce(
-  function (qtd, accumulator) {
-    //para cada numero, será executado a função de acumulação
-    return accumulator + qtd;
+//inserindo objeto dentro de um objeto
+person.pet = {
+  namePet: 'Bruce',
+  agePet: '7',
+};
+console.log(person);
+console.log(person.pet.agePet);
+
+const {
+  firstName: primeiroNome,
+  lastName,
+  age,
+  hobbies,
+
+  pet: { namePet: nomeDoPet, agePet: idadePet },
+} = person;
+
+console.log(idadePet);
+console.log(nomeDoPet);
+
+//lista (array) de objetos
+const toDos = [
+  {
+    id: 1,
+    description: 'estudar',
+    isCompleted: false,
   },
-  0 //como inicia o accumulator 0 se iniciar em 100, será 100+1o numoro+2o numero...
-);
+  {
+    id: 2,
+    description: 'ler',
+    isCompleted: true,
+  },
+  {
+    id: 3,
+    description: 'treinar',
+    isCompleted: true,
+  },
+];
 
-console.log(sumOfEstoque);
+console.log(toDos[2].description);
