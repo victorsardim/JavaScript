@@ -1,32 +1,48 @@
-//lista (array) de objetos
-const toDos = [
-  {
-    id: 1,
-    description: 'estudar',
-    isCompleted: false,
-  },
-  {
-    id: 2,
-    description: 'ler',
-    isCompleted: true,
-  },
-  {
-    id: 3,
-    description: 'treinar',
-    isCompleted: true,
-  },
-];
+// for loop
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
 
-console.log(toDos);
+//listas e for
 
-//usar o JSON para enviar para servidor
+const cars = ['ferrari', 'tesla', 'mercedes'];
 
-//para enviar a lista para o servidor, precisamos transformar a lista em string
+for (i = 0; i < cars.length; i++) {
+  console.log(cars[i]);
+}
 
-const toDosJSON = JSON.stringify(toDos);
-console.log(toDosJSON);
+//lista e for of
 
-//para consumir dados de um servidor, precisamos transformar a string em lsita
+for (car of cars) {
+  console.log(car);
+}
 
-const toDosList = JSON.parse(toDosJSON);
-console.log(toDosList);
+//lista e forEach
+
+cars.forEach(function (car, index) {
+  console.log(index);
+  console.log(car);
+});
+
+//loop while
+
+let index = 0;
+
+while (index < 10) {
+  console.log(index);
+  // index = index + 1;
+  // index += 1;
+  //mesma coisa dos acima
+  index++;
+}
+
+//foop for In
+
+const person = {
+  name: 'jane',
+  age: 21,
+};
+
+for (property in person) {
+  console.log(person[property]);
+}
