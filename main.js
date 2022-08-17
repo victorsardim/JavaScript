@@ -1,74 +1,37 @@
-//if else
+//uma vaziável string vazia é false
+const x = '';
+console.log(!!x);
 
-const sum = 1 + 1;
+//uma variável zero é false
+const y = 0;
+console.log(!!y);
 
-if (sum === 2) {
-  //condição verdadeira
-  console.log('sum is 2!');
+//uma variável nula é false
+const z = null;
+console.log(!!z);
+
+//uma variável indefinida é false
+const w = undefined;
+console.log(!!w);
+
+//uma lista vazia é true
+const list = [];
+console.log(!!list);
+
+//um objeto vazio é true
+const object = {};
+console.log(!!object);
+
+// check se uma lisa é vazia
+
+if (list.length > 0) {
+  console.log('não é vazia');
 } else {
-  //condição falsa
-  console.log('sum is not 2!');
+  console.log('é vazia');
 }
 
-//else if
-
-const sum2 = 1 + 2;
-
-if (sum2 === 2) {
-  //condição verdadeira
-  console.log('sum is 2!');
-} else if (sum2 === 3) {
-  //verdadeira
-  console.log('sum is 3!');
-} else {
-  //condição falsa
-  console.log('sum is not 2!');
-}
-
-//and &&
-//or ||
-
-const sum3 = 2 + 2;
-const sum4 = 3 + 10;
-
-if (sum3 === 4 && sum4 === 6) {
-  console.log('sum3 is 4 and sum4 is 6!');
-} else {
-  console.log('sum3 is not 4 and sum4 is not 6!');
-}
-
-if (sum3 === 4 || sum4 === 6) {
-  console.log('sum3 is 4 or sum4 is 6!');
-} else {
-  console.log('sum3 is not 4 or sum4 is not 6!');
-}
-
-//terary operator
-let number; //pode declarar variável sem determinar o valor dela incialmente
-const sum5 = 1 + 1;
-
-if (sum5 === 2) {
-  number = 2;
-} else {
-  number = 4;
-}
-console.log(number);
-
-//mesma resposta do acima - mais limpo
-let number2 = sum5 === 2 ? 2 : 4;
-console.log(number2);
-
-//switch
-const car = 'Ferrari';
-
-switch (car) {
-  case 'Mercedes':
-    console.log('Mercedes is builtiful ');
-    break;
-  case 'Ferrari':
-    console.log('Ferrari is red ');
-    break;
-  case 'Tesla':
-    console.log('Tesla is Smart ');
-    break;
-}
+//ou inverter a logica do true/false
+console.log(!!list); //!! verifica se list (que é vazio) é verdadeiro ou falso - verdadeiro pq uma lista vazia é verdadeiro
+console.log(!list); //! inverte o boleano - torna lista vazia como falso
+console.log(!false); //! inverte o boleano - torna false em true
+console.log(!true); //! inverte o boleano - torna true em false
