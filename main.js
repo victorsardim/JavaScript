@@ -1,48 +1,62 @@
-//logando a resposta da função
+//
+class Person {
+  constructor(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
 
-function sum(a, b) {
-  console.log(a + b);
+  getFullName() {
+    console.log(`${this.firstName} ${this.lastName}`);
+  }
+
+  speak() {
+    console.log('hello world!');
+  }
+
+  static speak2() {
+    console.log('hello world2!');
+  }
 }
 
-sum(2, 2);
+const person = new Person('victor', 'sardim', 36);
 
-//assinalando o retorno da função a uma variavel resposta e logando essa variável resposta
+console.log(person);
 
-function sum2(a, b) {
-  return a + b;
+person.getFullName();
+person.speak();
+Person.speak2();
+
+//heranças
+class Animal {
+  constructor(name, size) {
+    this.name = name;
+    this.size = size;
+  }
+  speak() {
+    console.log(`${this.name} made some noise`);
+  }
+
+  sizeTipe() {
+    console.log(`${this.name} is ${this.size} size`);
+  }
 }
 
-result = sum2(13, 43);
+const animal = new Animal('Leao', 'Medium');
 
-console.log(result);
+animal.speak();
+animal.sizeTipe();
 
-//se algum parametro nao receber valor de entrada, pode ser definido um valor previamente estabelecido
+class Dog extends Animal {
+  constructor(name, size) {
+    super(name, size);
+  }
 
-function sum3(a = 10, b = 30) {
-  return a + b;
+  sizeTipe() {
+    console.log(`${this.name} is ${this.size} pet`);
+  }
 }
-result2 = sum3(undefined, 100);
 
-console.log(result2);
-
-function sum4(a = 10, b = 30) {
-  return a + b;
-}
-result3 = sum4(100, undefined);
-
-console.log(result3);
-
-//arrow function
-
-const sumArrow = (a, b) => {
-  return a + b;
-};
-const resultArrow = sumArrow(2, 2);
-console.log(resultArrow);
-
-//arrow function mais simples ainda
-
-const sumArrow2 = (a, b) => a + b;
-
-const resultArrow2 = sumArrow2(2, 2);
-console.log(resultArrow2);
+const dog = new Dog('Bruce', 'Medium');
+dog.speak(); //mantendo a classe herança
+dog.sizeTipe(); //sobrescrevendo a classe herança
