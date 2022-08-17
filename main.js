@@ -1,37 +1,48 @@
-//uma vaziável string vazia é false
-const x = '';
-console.log(!!x);
+//logando a resposta da função
 
-//uma variável zero é false
-const y = 0;
-console.log(!!y);
-
-//uma variável nula é false
-const z = null;
-console.log(!!z);
-
-//uma variável indefinida é false
-const w = undefined;
-console.log(!!w);
-
-//uma lista vazia é true
-const list = [];
-console.log(!!list);
-
-//um objeto vazio é true
-const object = {};
-console.log(!!object);
-
-// check se uma lisa é vazia
-
-if (list.length > 0) {
-  console.log('não é vazia');
-} else {
-  console.log('é vazia');
+function sum(a, b) {
+  console.log(a + b);
 }
 
-//ou inverter a logica do true/false
-console.log(!!list); //!! verifica se list (que é vazio) é verdadeiro ou falso - verdadeiro pq uma lista vazia é verdadeiro
-console.log(!list); //! inverte o boleano - torna lista vazia como falso
-console.log(!false); //! inverte o boleano - torna false em true
-console.log(!true); //! inverte o boleano - torna true em false
+sum(2, 2);
+
+//assinalando o retorno da função a uma variavel resposta e logando essa variável resposta
+
+function sum2(a, b) {
+  return a + b;
+}
+
+result = sum2(13, 43);
+
+console.log(result);
+
+//se algum parametro nao receber valor de entrada, pode ser definido um valor previamente estabelecido
+
+function sum3(a = 10, b = 30) {
+  return a + b;
+}
+result2 = sum3(undefined, 100);
+
+console.log(result2);
+
+function sum4(a = 10, b = 30) {
+  return a + b;
+}
+result3 = sum4(100, undefined);
+
+console.log(result3);
+
+//arrow function
+
+const sumArrow = (a, b) => {
+  return a + b;
+};
+const resultArrow = sumArrow(2, 2);
+console.log(resultArrow);
+
+//arrow function mais simples ainda
+
+const sumArrow2 = (a, b) => a + b;
+
+const resultArrow2 = sumArrow2(2, 2);
+console.log(resultArrow2);
